@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+  
+  body {
+    background-color: #050709;
+    color: #e2e8f0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom Cyber Backgrounds and Glows */
+.bg-cyber-grid {
+  background-image: linear-gradient(to right, rgba(0, 255, 102, 0.05) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(0, 255, 102, 0.05) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.bg-cyber-dots {
+  background-image: radial-gradient(rgba(0, 255, 102, 0.12) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.bg-radial-gradient {
+  background: radial-gradient(circle at 50% 20%, rgba(0, 255, 102, 0.12) 0%, rgba(5, 7, 9, 0) 70%);
+}
+
+.text-neon {
+  color: #00ff66;
+  text-shadow: 0 0 10px rgba(0, 255, 102, 0.5), 0 0 20px rgba(0, 255, 102, 0.2);
+}
+
+.text-neon-cyan {
+  color: #00f0ff;
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.5), 0 0 20px rgba(0, 240, 255, 0.2);
+}
+
+.glow-green {
+  box-shadow: 0 0 25px -5px rgba(0, 255, 102, 0.3);
+}
+
+.glow-green-lg {
+  box-shadow: 0 0 50px -10px rgba(0, 255, 102, 0.4);
+}
+
+.glow-border {
+  border-color: rgba(0, 255, 102, 0.3);
+  box-shadow: 0 0 15px rgba(0, 255, 102, 0.15);
+}
+
+.glow-border:hover {
+  border-color: rgba(0, 255, 102, 0.6);
+  box-shadow: 0 0 25px rgba(0, 255, 102, 0.3);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #080b0e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #15221b;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 255, 102, 0.2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00ff66;
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(1000%); }
+}
+
+.animate-scanline {
+  animation: scanline 8s linear infinite;
+}
+
