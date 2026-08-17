@@ -389,7 +389,7 @@ export const HeroCanvas: React.FC<HeroCanvasProps> = ({ accentTheme }) => {
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 pointer-events-none z-0">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-500/40 text-emerald-400 text-xs font-mono tracking-widest uppercase mb-4 shadow-[0_0_20px_rgba(0,255,102,0.2)]">
           <Zap className="w-3.5 h-3.5 text-emerald-400 animate-bounce" />
-          INTERACTIVE NEON DATA CANVAS • HOVER & CLICK TO ENGAGE
+          SEE YOUR DATA CLEARLY • EXPLORE IT IN REAL TIME
         </div>
 
         <h1 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-white max-w-4xl leading-none">
@@ -397,7 +397,7 @@ export const HeroCanvas: React.FC<HeroCanvasProps> = ({ accentTheme }) => {
         </h1>
 
         <p className="mt-4 text-sm sm:text-lg text-zinc-300 max-w-2xl font-normal leading-relaxed">
-          Zero-latency topology rendering engine for streaming telemetry, neural clusters, and high-frequency event networks with sub-millisecond precision.
+          Connect your data, explore it visually, and understand what matters faster. NEXUS gives you one clear workspace for turning complex data into actionable insights.
         </p>
 
         {/* CTAs */}
@@ -407,15 +407,15 @@ export const HeroCanvas: React.FC<HeroCanvasProps> = ({ accentTheme }) => {
             className="px-6 py-3 text-sm font-bold text-black bg-emerald-400 hover:bg-emerald-300 rounded-xl transition-all shadow-[0_0_30px_rgba(0,255,102,0.5)] hover:shadow-[0_0_45px_rgba(0,255,102,0.8)] flex items-center gap-2.5 cursor-pointer group"
           >
             <LiveDemoIcon className="w-4 h-4 text-black group-hover:scale-110 transition-transform" size={18} />
-            <span>EXPLORE LIVE DEMOS</span>
+            <span>START FREE</span>
           </a>
 
           <a
-            href="#sandbox"
+            href="visualizations"
             className="px-6 py-3 text-sm font-bold text-zinc-200 bg-zinc-900/90 border border-emerald-500/40 hover:border-emerald-400 hover:text-emerald-400 rounded-xl backdrop-blur-md transition-all flex items-center gap-2 cursor-pointer"
           >
             <Sliders className="w-4 h-4 text-emerald-400" />
-            CUSTOMIZE PARAMETERS
+            SEE HOW IT WORKS
           </a>
         </div>
       </div>
