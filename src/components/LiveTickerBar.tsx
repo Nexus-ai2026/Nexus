@@ -2,54 +2,40 @@ import React from 'react';
 import { Activity, Cpu, HardDrive, Wifi, ArrowUpRight } from 'lucide-react';
 
 export const LiveTickerBar: React.FC = () => {
-  const [nodes, setNodes] = useState(1284912);
-  const [throughput, setThroughput] = useState(48.2);
-  const [latency, setLatency] = useState(0.38);
-  const [packets, setPackets] = useState(4.28);
+  const metrics = [
+  {
+    label: 'ACTIVE USERS',
+    value: '0',
+    change: 'LIVE',
+    icon: Activity,
+  },
+  {
+    label: 'DATASETS PROCESSED',
+    value: '0',
+    change: 'LIVE',
+    icon: HardDrive,
+  },
+  {
+    label: 'VISUALIZATIONS',
+    value: '0',
+    change: 'LIVE',
+    icon: Cpu,
+  },
+  {
+    label: 'API REQUESTS',
+    value: '0',
+    change: 'LIVE',
+    icon: Wifi,
+  },
+  {
+    label: 'ERROR RATE',
+    value: '0%',
+    change: 'LIVE',
+    icon: Activity,
+  },
+];
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setNodes((prev) => prev + Math.floor((Math.random() - 0.45) * 12));
-      setThroughput((prev) => +(prev + (Math.random() - 0.5) * 0.2).toFixed(2));
-      setLatency((prev) => +(0.35 + Math.random() * 0.08).toFixed(2));
-      setPackets((prev) => +(4.2 + Math.random() * 0.2).toFixed(2));
-    }, 1500);
-
-    return () => clearInterval(interval);
-  }, []);
-
-    const metrics = [
-    {
-      label: 'DATA INPUT',
-      value: 'CSV / JSON',
-      change: 'READY',
-      icon: HardDrive,
-    },
-    {
-      label: 'VISUALIZATION',
-      value: 'REAL-TIME',
-      change: 'SUPPORTED',
-      icon: Activity,
-    },
-    {
-      label: 'CHART ENGINE',
-      value: 'INTERACTIVE',
-      change: 'READY',
-      icon: Cpu,
-    },
-    {
-      label: 'STREAMING',
-      value: 'WEBSOCKET',
-      change: 'SUPPORTED',
-      icon: Wifi,
-    },
-    {
-      label: 'DATA STORAGE',
-      value: 'SUPABASE',
-      change: 'CONNECTED',
-      icon: HardDrive,
-    },
-  ];
+  
 
   return (
     <section className="w-full bg-zinc-950 border-y border-emerald-950/60 py-4 px-4 overflow-hidden">
