@@ -50,7 +50,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               );
             })}
           </div>
-        </di>
+        </div>
 
       {/* Main Navbar */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -90,7 +90,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               <div className="flex items-center gap-2">
                 <Link
                   to="/dashboard"
-              className="flex items-center gap-2 px-4 py-2 text-xs font-bold text-white bg-white/5 hover:bg-white/10 border border-white/10 hover:border-emerald-400/50 rounded-xl transition-all"     hover:bg-emerald-300 rounded-lg transition-all shadow-[0_0_15px_rgba(0,255,102,0.3)] cursor-pointer"
+             className="flex items-center gap-2 px-4 py-2 text-xs font-bold text-white bg-white/5 hover:bg-white/10 border border-white/10 hover:border-emerald-400/50 rounded-xl transition-all"
                 >
                   <LayoutDashboard className="w-3.5 h-3.5" />
                   <span>Open Dashboard</span>
