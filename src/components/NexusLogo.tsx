@@ -8,10 +8,10 @@ interface NexusLogoProps {
   glow?: boolean;
 }
 
-export const NexusLogoIcon: React.FC<{ size?: number; className?: string }> = ({
-  size = 32,
-  className = '',
-}) => {
+export const NexusLogoIcon: React.FC<{
+  size?: number;
+  className?: string;
+}> = ({ size = 32, className = '' }) => {
   return (
     <svg
       width={size}
@@ -22,32 +22,26 @@ export const NexusLogoIcon: React.FC<{ size?: number; className?: string }> = ({
       className={`shrink-0 transition-transform duration-300 ${className}`}
     >
       <defs>
-        {/* Deep Luxury Sapphire to Emerald Gradients */}
-        <linearGradient id="nexus-hex-top" x1="20" y1="10" x2="80" y2="60" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stopColor="#1e3a8a" />
-          <stop offset="40%" stopColor="#2563eb" />
-          <stop offset="100%" stopColor="#06b6d4" />
+        <linearGradient
+          id="nexus-mark"
+          x1="20"
+          y1="15"
+          x2="80"
+          y2="85"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0%" stopColor="#22d3ee" />
+          <stop offset="50%" stopColor="#10b981" />
+          <stop offset="100%" stopColor="#34d399" />
         </linearGradient>
 
-        <linearGradient id="nexus-hex-left" x1="10" y1="40" x2="60" y2="90" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stopColor="#1e293b" />
-          <stop offset="50%" stopColor="#0f766e" />
-          <stop offset="100%" stopColor="#10b981" />
-        </linearGradient>
-
-        <linearGradient id="nexus-hex-right" x1="40" y1="40" x2="90" y2="90" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stopColor="#0369a1" />
-          <stop offset="50%" stopColor="#0284c7" />
-          <stop offset="100%" stopColor="#38bdf8" />
-        </linearGradient>
-
-        <linearGradient id="nexus-facet-bevel" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stopColor="#ffffff" stopOpacity="0.4" />
-          <stop offset="100%" stopColor="#ffffff" stopOpacity="0.0" />
-        </linearGradient>
-
-        {/* Ambient Bloom Filter */}
-        <filter id="nexus-luxury-glow" x="-20%" y="-20%" width="140%" height="140%">
+        <filter
+          id="nexus-glow"
+          x="-30%"
+          y="-30%"
+          width="160%"
+          height="160%"
+        >
           <feGaussianBlur stdDeviation="2.5" result="blur" />
           <feMerge>
             <feMergeNode in="blur" />
@@ -56,74 +50,29 @@ export const NexusLogoIcon: React.FC<{ size?: number; className?: string }> = ({
         </filter>
       </defs>
 
-      {/* Background Micro Network Mesh Grid */}
-      <circle cx="50" cy="50" r="44" stroke="#1e293b" strokeWidth="0.8" strokeDasharray="3 3" opacity="0.6" />
-
-      {/* Central Interconnection Node Rays */}
-      <line x1="50" y1="30" x2="28" y2="68" stroke="#38bdf8" strokeWidth="1.2" strokeOpacity="0.5" strokeDasharray="2 2" />
-      <line x1="50" y1="30" x2="72" y2="68" stroke="#06b6d4" strokeWidth="1.2" strokeOpacity="0.5" strokeDasharray="2 2" />
-      <line x1="28" y1="68" x2="72" y2="68" stroke="#10b981" strokeWidth="1.2" strokeOpacity="0.5" strokeDasharray="2 2" />
-
-      {/* --- TOP HEXAGON NODE (Primary Cluster) --- */}
-      <g filter="url(#nexus-luxury-glow)">
-        {/* Main Solid Hexagon */}
-        <polygon
-          points="50,8 70,19.5 70,42.5 50,54 30,42.5 30,19.5"
-          fill="url(#nexus-hex-top)"
-          stroke="#60a5fa"
-          strokeWidth="1.2"
+      {/* Minimal N mark */}
+      <g filter="url(#nexus-glow)">
+        <path
+          d="M22 74V26L50 74V26"
+          stroke="url(#nexus-mark)"
+          strokeWidth="10"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
-        {/* Hexagon Top Bevel Highlight */}
-        <polygon
-          points="50,11 67,21 50,31 33,21"
-          fill="url(#nexus-facet-bevel)"
-          opacity="0.6"
+
+        <path
+          d="M50 26L78 74V26"
+          stroke="url(#nexus-mark)"
+          strokeWidth="10"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
-        {/* Core Center Pulse */}
-        <circle cx="50" cy="31" r="3.5" fill="#ffffff" />
-        <circle cx="50" cy="31" r="1.5" fill="#0284c7" />
       </g>
 
-      {/* --- BOTTOM-LEFT HEXAGON NODE --- */}
-      <g filter="url(#nexus-luxury-glow)">
-        <polygon
-          points="28,46 48,57.5 48,80.5 28,92 8,80.5 8,57.5"
-          fill="url(#nexus-hex-left)"
-          stroke="#34d399"
-          strokeWidth="1.2"
-        />
-        {/* Top Facet */}
-        <polygon
-          points="28,49 45,59 28,69 11,59"
-          fill="url(#nexus-facet-bevel)"
-          opacity="0.5"
-        />
-        {/* Center Node */}
-        <circle cx="28" cy="69" r="3" fill="#ffffff" />
-        <circle cx="28" cy="69" r="1.5" fill="#059669" />
-      </g>
-
-      {/* --- BOTTOM-RIGHT HEXAGON NODE --- */}
-      <g filter="url(#nexus-luxury-glow)">
-        <polygon
-          points="72,46 92,57.5 92,80.5 72,92 52,80.5 52,57.5"
-          fill="url(#nexus-hex-right)"
-          stroke="#38bdf8"
-          strokeWidth="1.2"
-        />
-        {/* Top Facet */}
-        <polygon
-          points="72,49 89,59 72,69 55,59"
-          fill="url(#nexus-facet-bevel)"
-          opacity="0.5"
-        />
-        {/* Center Node */}
-        <circle cx="72" cy="69" r="3" fill="#ffffff" />
-        <circle cx="72" cy="69" r="1.5" fill="#0284c7" />
-      </g>
-
-      {/* Glowing Center Bridge Intersection Spark */}
-      <circle cx="50" cy="50" r="2" fill="#38bdf8" className="animate-ping" opacity="0.8" />
+      {/* Small connection nodes */}
+      <circle cx="22" cy="26" r="4" fill="#22d3ee" />
+      <circle cx="50" cy="74" r="4" fill="#10b981" />
+      <circle cx="78" cy="26" r="4" fill="#34d399" />
     </svg>
   );
 };
@@ -131,7 +80,7 @@ export const NexusLogoIcon: React.FC<{ size?: number; className?: string }> = ({
 export const NexusLogo: React.FC<NexusLogoProps> = ({
   size = 'md',
   variant = 'full',
-  subtitle = 'Understands Your Data',
+  subtitle = 'Understand your data',
   className = '',
   glow = true,
 }) => {
@@ -139,39 +88,48 @@ export const NexusLogo: React.FC<NexusLogoProps> = ({
     typeof size === 'number'
       ? size
       : size === 'sm'
-      ? 24
-      : size === 'md'
-      ? 32
-      : size === 'lg'
-      ? 42
-      : 52;
+        ? 24
+        : size === 'md'
+          ? 32
+          : size === 'lg'
+            ? 42
+            : 52;
 
   const boxPixel = pixelSize + 12;
 
   return (
-    <div className={`flex items-center gap-3.5 group select-none ${className}`}>
-      {/* Hex-Frame Emblem Container */}
+    <div
+      className={`flex items-center gap-3 group select-none ${className}`}
+    >
       <div
-        className="relative flex items-center justify-center bg-gradient-to-b from-zinc-900/90 to-zinc-950/95 border border-cyan-500/30 group-hover:border-cyan-400/80 rounded-xl transition-all duration-300 shadow-[0_0_20px_rgba(6,182,212,0.12)] group-hover:shadow-[0_0_30px_rgba(56,189,248,0.3)] backdrop-blur-md"
-        style={{ width: `${boxPixel}px`, height: `${boxPixel}px` }}
+        className="relative flex items-center justify-center rounded-xl border border-white/10 bg-zinc-900/80 transition-all duration-300 group-hover:border-emerald-400/50 group-hover:bg-zinc-900"
+        style={{
+          width: `${boxPixel}px`,
+          height: `${boxPixel}px`,
+        }}
       >
-        <NexusLogoIcon size={pixelSize} className="group-hover:scale-105" />
+        <NexusLogoIcon
+          size={pixelSize}
+          className="group-hover:scale-105"
+        />
+
         {glow && (
-          <div className="absolute -inset-1 bg-gradient-to-r from-blue-600/20 via-cyan-500/20 to-emerald-500/20 rounded-xl blur-md -z-10 group-hover:opacity-100 opacity-60 transition-opacity duration-300"></div>
+          <div className="absolute -inset-1 -z-10 rounded-xl bg-emerald-400/10 blur-md opacity-70 transition-opacity duration-300 group-hover:opacity-100" />
         )}
       </div>
 
       {variant === 'full' && (
         <div className="flex flex-col text-left">
           <div className="flex items-center gap-2 leading-none">
-            {/* Bold Premium Display Wordmark matching reference */}
-            <span className="text-21px font-black tracking-[0.12em] text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:via-cyan-200 group-hover:to-emerald-300 transition-all font-sans">
+            <span className="font-sans text-[21px] font-black tracking-[0.12em] text-white transition-colors duration-300 group-hover:text-emerald-300">
               NEXUS
             </span>
-            <span className="inline-block w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse shadow-[0_0_8px_#38bdf8]"></span>
+
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
           </div>
+
           {subtitle && (
-            <span className="text-[10px] font-mono tracking-widest text-cyan-400/80 uppercase mt-1 font-semibold">
+            <span className="mt-1 text-[9px] font-medium uppercase tracking-[0.16em] text-zinc-500">
               {subtitle}
             </span>
           )}
@@ -181,10 +139,10 @@ export const NexusLogo: React.FC<NexusLogoProps> = ({
   );
 };
 
-export const LiveDemoIcon: React.FC<{ className?: string; size?: number }> = ({
-  className = 'w-4 h-4',
-  size = 18,
-}) => {
+export const LiveDemoIcon: React.FC<{
+  className?: string;
+  size?: number;
+}> = ({ className = 'w-4 h-4', size = 18 }) => {
   return (
     <span className="relative inline-flex items-center justify-center shrink-0">
       <svg
@@ -200,20 +158,25 @@ export const LiveDemoIcon: React.FC<{ className?: string; size?: number }> = ({
       >
         <path d="M4.93 4.93a10 10 0 0 1 14.14 0" className="opacity-60" />
         <path d="M7.76 7.76a6 6 0 0 1 8.48 0" className="opacity-90" />
-        <polygon points="10 8 16 12 10 16 10 8" fill="currentColor" strokeWidth="0" />
+        <polygon
+          points="10 8 16 12 10 16 10 8"
+          fill="currentColor"
+          strokeWidth="0"
+        />
       </svg>
+
       <span className="absolute -top-1 -right-1 flex h-2 w-2 pointer-events-none">
-        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-300 opacity-90"></span>
-        <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-200"></span>
+        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-300 opacity-90" />
+        <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-200" />
       </span>
     </span>
   );
 };
 
-export const SpeedLaunchIcon: React.FC<{ className?: string; size?: number }> = ({
-  className = 'w-4 h-4',
-  size = 16,
-}) => {
+export const SpeedLaunchIcon: React.FC<{
+  className?: string;
+  size?: number;
+}> = ({ className = 'w-4 h-4', size = 16 }) => {
   return (
     <span className="relative inline-flex items-center justify-center shrink-0">
       <svg
@@ -255,5 +218,3 @@ export const SpeedLaunchIcon: React.FC<{ className?: string; size?: number }> = 
     </span>
   );
 };
-
-
