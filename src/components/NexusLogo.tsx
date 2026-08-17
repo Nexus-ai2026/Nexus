@@ -131,7 +131,7 @@ export const NexusLogoIcon: React.FC<{ size?: number; className?: string }> = ({
 export const NexusLogo: React.FC<NexusLogoProps> = ({
   size = 'md',
   variant = 'full',
-  subtitle = 'Data Topology Engine',
+  subtitle = 'Understands Your Data',
   className = '',
   glow = true,
 }) => {
@@ -165,7 +165,7 @@ export const NexusLogo: React.FC<NexusLogoProps> = ({
         <div className="flex flex-col text-left">
           <div className="flex items-center gap-2 leading-none">
             {/* Bold Premium Display Wordmark matching reference */}
-            <span className="text-xl font-black tracking-[0.2em] text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:via-cyan-200 group-hover:to-emerald-300 transition-all font-sans">
+            <span className="text-21px font-black tracking-[0.12em] text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:via-cyan-200 group-hover:to-emerald-300 transition-all font-sans">
               NEXUS
             </span>
             <span className="inline-block w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse shadow-[0_0_8px_#38bdf8]"></span>
