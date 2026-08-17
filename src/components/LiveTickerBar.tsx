@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { Activity, ShieldCheck, Cpu, HardDrive, Wifi, ArrowUpRight } from 'lucide-react';
+import React from 'react';
+import { Activity, Cpu, HardDrive, Wifi, ArrowUpRight } from 'lucide-react';
 
 export const LiveTickerBar: React.FC = () => {
   const [nodes, setNodes] = useState(1284912);
@@ -18,41 +18,36 @@ export const LiveTickerBar: React.FC = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const metrics = [
+    const metrics = [
     {
-      label: 'ACTIVE TOPOLOGY NODES',
-      value: nodes.toLocaleString(),
-      change: '+2.4%',
-      icon: Cpu,
-      isPositive: true,
-    },
-    {
-      label: 'STREAM THROUGHPUT',
-      value: `${throughput} GB/s`,
-      change: '+5.8%',
-      icon: Wifi,
-      isPositive: true,
-    },
-    {
-      label: 'GLOBAL P99 LATENCY',
-      value: `${latency} ms`,
-      change: '-12.4%',
-      icon: Activity,
-      isPositive: true,
-    },
-    {
-      label: 'PACKETS / SECOND',
-      value: `${packets}M ops/s`,
-      change: '+1.9%',
+      label: 'DATA INPUT',
+      value: 'CSV / JSON',
+      change: 'READY',
       icon: HardDrive,
-      isPositive: true,
     },
     {
-      label: 'THREAT GUARD',
-      value: '0 ANOMALIES',
-      change: '100% CLEAN',
-      icon: ShieldCheck,
-      isPositive: true,
+      label: 'VISUALIZATION',
+      value: 'REAL-TIME',
+      change: 'SUPPORTED',
+      icon: Activity,
+    },
+    {
+      label: 'CHART ENGINE',
+      value: 'INTERACTIVE',
+      change: 'READY',
+      icon: Cpu,
+    },
+    {
+      label: 'STREAMING',
+      value: 'WEBSOCKET',
+      change: 'SUPPORTED',
+      icon: Wifi,
+    },
+    {
+      label: 'DATA STORAGE',
+      value: 'SUPABASE',
+      change: 'CONNECTED',
+      icon: HardDrive,
     },
   ];
 
