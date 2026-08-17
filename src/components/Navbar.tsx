@@ -31,27 +31,11 @@ export const Navbar: React.FC<NavbarProps> = ({
   return (
     <header className="sticky top-0 z-50 w-full backdrop-blur-xl bg-black/80 border-b border-emerald-950/60 transition-colors font-mono">
 
-        <div className="flex items-center gap-3">
-          <span className="text-zinc-500">ACCENT PALETTE:</span>
-          <div className="flex items-center gap-1 bg-zinc-900/80 p-0.5 rounded-full border border-zinc-800">
-            {(Object.keys(THEME_CONFIGS) as AccentTheme[]).map((themeKey) => {
-              const cfg = THEME_CONFIGS[themeKey];
-              const isActive = accentTheme === themeKey;
-              return (
-                <button
-                  key={themeKey}
-                  onClick={() => setAccentTheme(themeKey)}
-                  title={cfg.name}
-                  className={`w-4 h-4 rounded-full transition-all cursor-pointer ${
-                    isActive ? 'scale-125 ring-2 ring-white' : 'opacity-60 hover:opacity-100'
-                  }`}
-                  style={{ backgroundColor: cfg.primaryHex }}
-                />
-              );
-            })}
-          </div>
-        </div>
+        return (
+  <header className="sticky top-0 z-50 w-full backdrop-blur-xl bg-black/80 border-b border-emerald-950/60 transition-colors font-mono">
 
+    {/* Main Navbar */}
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       {/* Main Navbar */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
