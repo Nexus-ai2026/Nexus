@@ -26,25 +26,10 @@ export const Navbar: React.FC<NavbarProps> = ({
   { label: 'Overview', href: '#overview' },
   { label: 'Data', href: '#datasource' },
   { label: 'Visualize', href: '#visualizations' },
-  { label: 'Studio', href: '#sandbox' },
   { label: 'Features', href: '#features' },
 ];
-
   return (
     <header className="sticky top-0 z-50 w-full backdrop-blur-xl bg-black/80 border-b border-emerald-950/60 transition-colors font-mono">
-      {/* Top Status Bar */}
-      <div className="hidden md:flex items-center justify-between px-6 py-1 bg-zinc-950/90 border-b border-emerald-900/20 text-[11px] font-mono tracking-wider text-zinc-400">
-        <div className="flex items-center gap-4">
-          <span className="flex items-center gap-1.5 text-emerald-400">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-            </span>
-            NEXUS DATA PLATFORM
-          </span>
-          <span className="text-zinc-600">|</span>
-        
-        </div>
 
         <div className="flex items-center gap-3">
           <span className="text-zinc-500">ACCENT PALETTE:</span>
@@ -73,7 +58,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="group">
-            <NexusLogo variant="full" size="md" subtitle="Data Topology Engine" />
+            <NexusLogo variant="full" size="md" subtitle="Understands Your Data" />
           </Link>
 
           {/* Desktop Nav Links */}
@@ -106,10 +91,10 @@ export const Navbar: React.FC<NavbarProps> = ({
               <div className="flex items-center gap-2">
                 <Link
                   to="/dashboard"
-                  className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold text-black bg-emerald-400 hover:bg-emerald-300 rounded-lg transition-all shadow-[0_0_15px_rgba(0,255,102,0.3)] cursor-pointer"
+              className="flex items-center gap-2 px-4 py-2 text-xs font-bold text-white bg-white/5 hover:bg-white/10 border border-white/10 hover:border-emerald-400/50 rounded-xl transition-all"     hover:bg-emerald-300 rounded-lg transition-all shadow-[0_0_15px_rgba(0,255,102,0.3)] cursor-pointer"
                 >
                   <LayoutDashboard className="w-3.5 h-3.5" />
-                  <span>DASHBOARD</span>
+                  <span>Open Dashboard</span>
                 </Link>
 
                 <div className="flex items-center gap-1.5 bg-zinc-900 border border-zinc-800 px-2.5 py-1.5 rounded-lg text-xs">
