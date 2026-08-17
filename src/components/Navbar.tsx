@@ -22,14 +22,13 @@ export const Navbar: React.FC<NavbarProps> = ({
   const { user, logout } = useAuth();
   const currentTheme = THEME_CONFIGS[accentTheme];
 
-  const navLinks = [
-    { label: 'Overview', href: '#overview' },
-    { label: 'Data Source', href: '#datasource' },
-    { label: 'Live Visualizations', href: '#visualizations' },
-    { label: 'Visual Studio', href: '#sandbox' },
-    { label: 'Bento Features', href: '#features' },
-    { label: 'Benchmarks', href: '#benchmarks' },
-  ];
+ const navLinks = [
+  { label: 'Overview', href: '#overview' },
+  { label: 'Data', href: '#datasource' },
+  { label: 'Visualize', href: '#visualizations' },
+  { label: 'Studio', href: '#sandbox' },
+  { label: 'Features', href: '#features' },
+];
 
   return (
     <header className="sticky top-0 z-50 w-full backdrop-blur-xl bg-black/80 border-b border-emerald-950/60 transition-colors font-mono">
@@ -41,14 +40,10 @@ export const Navbar: React.FC<NavbarProps> = ({
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
             </span>
-            SYSTEM NOMINAL // CLUSTER US-EAST-1 ACTIVE
+            NEXUS DATA PLATFORM
           </span>
           <span className="text-zinc-600">|</span>
-          <span className="flex items-center gap-1 text-zinc-300">
-            <Activity className="w-3 h-3 text-emerald-400" /> 4.2M EVENTS/SEC
-          </span>
-          <span className="text-zinc-600">|</span>
-          <span className="text-zinc-300">LATENCY: 0.38ms</span>
+        
         </div>
 
         <div className="flex items-center gap-3">
